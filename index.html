@@ -38,29 +38,26 @@
       <nav id="main-nav" class="main-nav" aria-label="Hauptnavigation">
         <ul>
           <li><a href="#start" data-nav="start">Start</a></li>
-          <li class="nav-item-members-only is-hidden">
-            <a href="#mitgliederversammlung" data-nav="mitgliederversammlung">Mitgliederversammlung</a>
-          </li>
           <li><a href="#tagung" data-nav="tagung">Tagung</a></li>
           <li><a href="#anmeldung" data-nav="anmeldung">Anmeldung</a></li>
-          <li class="nav-item-members-only is-hidden">
-            <a href="#download" data-nav="download">Download</a>
-          </li>
-          <li><a href="#kontakt" data-nav="kontakt">Kontakt / Impressum</a></li>
+          <li><a href="#download" data-nav="download">Download</a></li>
+          <li><a href="#kontakt" data-nav="kontakt">Kontakt</a></li>
         </ul>
       </nav>
 
-      <!-- Login Icon -->
-      <button
-        class="login-toggle"
-        type="button"
-        aria-haspopup="dialog"
-        aria-controls="login-dialog"
-        aria-expanded="false"
-      >
-        <span class="login-icon login-icon-logged-out" aria-hidden="true"></span>
-        <span class="visually-hidden">Mitglieder Login öffnen</span>
-      </button>
+      <div class="header-actions">
+        <span class="member-pill" aria-hidden="true">Hallo Mitglieder</span>
+        <button
+          class="login-toggle"
+          type="button"
+          aria-haspopup="dialog"
+          aria-controls="login-dialog"
+          aria-expanded="false"
+        >
+          <span class="login-icon login-icon-logged-out" aria-hidden="true"></span>
+          <span class="visually-hidden">Mitglieder Login öffnen</span>
+        </button>
+      </div>
     </header>
 
     <!-- Hauptinhalt -->
@@ -72,13 +69,15 @@
           <div class="hero-text">
             <p class="hero-overtitle">Netzwerk anspruchsvolles Schulessen</p>
             <h1 id="start-heading">Gemeinsam für besseres Schulessen</h1>
-            <p class="hero-subline">
-              <!-- Start Text aus deinem Onepager hier einfügen -->
-            </p>
-            <div class="hero-actions">
-              <a href="#tagung" class="btn btn-primary">Mehr erfahren</a>
-              <a href="#anmeldung" class="btn btn-secondary">Zur Anmeldung</a>
-            </div>
+          <p class="hero-subline">
+            Im Auftrag des BMBF entwickelten wir den Qualitätsstandard „Gutes
+            Essen in der Schule“. Seit 2012 beraten wir Schulen und Caterer auf
+            ihrem Weg zu nachhaltig gutem Schulessen.
+          </p>
+          <div class="hero-actions">
+            <a href="#tagung" class="btn btn-primary">Mehr erfahren</a>
+            <a href="#kontakt" class="btn btn-secondary">Kontakt</a>
+          </div>
           </div>
 
           <div class="hero-media">
@@ -88,73 +87,77 @@
           </div>
         </div>
 
-        <!-- Begrüßung nur für Mitglieder -->
-        <div class="members-welcome section-members-only is-hidden" aria-live="polite">
-          <h2>Willkommen im Bereich für Mitglieder von NASCH e.V.</h2>
-          <p>
-            Dieser Bereich ist exklusiv für Mitglieder und enthält zusätzliche Infos, Downloads und Programmteile.
-          </p>
-        </div>
-      </section>
-
-      <!-- Mitgliederversammlung (nur Mitglieder) -->
-      <section
-        id="mitgliederversammlung"
-        class="section section-members-only is-hidden"
-        aria-labelledby="mitgliederversammlung-heading"
-      >
-        <header class="section-header">
-          <h2 id="mitgliederversammlung-heading">Mitgliederversammlung</h2>
-          <p class="section-subline">Dienstag, 10. März 2026</p>
-        </header>
-
-        <div class="agenda">
-          <!-- Programmpunkte einfügen -->
-          <article class="agenda-item">
-            <h3 class="agenda-time">16:30 - 18:00 Uhr</h3>
-            <p class="agenda-title">Anreise der Netzwerk Mitglieder</p>
-          </article>
-        </div>
       </section>
 
       <!-- Tagung -->
       <section id="tagung" class="section section-tagung" aria-labelledby="tagung-heading">
-        <header class="section-header">
+        <div class="tagung-intro">
+          <span class="tag tag-new">Neuer Termin</span>
           <h2 id="tagung-heading">Jahrestagung 2026</h2>
           <p class="section-subline">Mittwoch, 11. März 2026 · Braunschweig · 10:00 - 17:00 Uhr</p>
-        </header>
-
-        <div class="tagung-layout">
-          <div class="tagung-info">
-            <p>
-              <!-- Kurzbeschreibung zur Tagung hier einfügen -->
-            </p>
-
-            <div class="tagung-facts">
-              <div class="fact-card">
-                <h3>Datum</h3>
-                <p>Mittwoch, 11. März 2026</p>
-              </div>
-              <div class="fact-card">
-                <h3>Ort</h3>
-                <p>Braunschweig</p>
-              </div>
-              <div class="fact-card">
-                <h3>Zeiten</h3>
-                <p>10:00 - 17:00 Uhr</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="tagung-media">
-            <figure>
-              <img src="img/Tagung_edit.png" alt="Teilnehmende bei einer Tagung">
-            </figure>
-          </div>
+          <p>
+            Im Auftrag des BMBF entwickelten wir den Qualitätsstandard „Gutes Essen in der Schule“ und begleiten
+            seitdem Schulen und Caterer dabei, ihren Kindern nachhaltige und leckere Mahlzeiten anzubieten. Wir freuen
+            uns auf ein Treffen mit vielen Mitgliedern, Referenten und befreundeten Caterern.
+          </p>
         </div>
 
-        <div class="tagung-programm">
-          <!-- Detailprogramm als Karten oder Liste -->
+        <div class="tagung-quote">
+          <p>
+            „Gesundes Essen, Nachhaltigkeit und soziale Gerechtigkeit müssen im Schulalltag zusammen gedacht werden,
+            damit gelebte Esskultur zu einer guten Schulentwicklung beiträgt.“
+          </p>
+        </div>
+
+        <div class="tagung-programm" aria-labelledby="programm-heading">
+          <div class="programm-card">
+            <div class="programm-header">
+              <div>
+                <p class="tag">Programm</p>
+                <p class="programm-date">Mittwoch, 11. März 2026</p>
+              </div>
+              <div class="tagung-media">
+                <img src="img/Tagung_edit.png" alt="Teilnehmende bei einer Tagung">
+              </div>
+            </div>
+
+            <h3 id="programm-heading">Programmübersicht</h3>
+            <div class="programm-list">
+              <article class="programm-item">
+                <div class="programm-time">10:00</div>
+                <div class="programm-details">
+                  <h4>Begrüßung + Keynote</h4>
+                  <p>Gutes Essen in der Schule als Teil guter Schulqualität.</p>
+                </div>
+              </article>
+              <article class="programm-item">
+                <div class="programm-time">13:00</div>
+                <div class="programm-details">
+                  <h4>Mittagspause mit Buffet</h4>
+                  <p>Fingerfood mit Gemüse &amp; Obst von Querbeet, Markthalle Hannover.</p>
+                </div>
+              </article>
+              <article class="programm-item">
+                <div class="programm-time">14:00</div>
+                <div class="programm-details">
+                  <h4>Impulsvorträge</h4>
+                  <p>KI-Tools anwenden, Schulküchen sanieren – Potenziale nutzen &amp; Alltag gestalten.</p>
+                </div>
+              </article>
+              <article class="programm-item">
+                <div class="programm-time">16:00</div>
+                <div class="programm-details">
+                  <h4>Workshops</h4>
+                  <ul>
+                    <li>Beste Regeln für Kinder, Pädagogen, Betreuung</li>
+                    <li>KiTa- &amp; Schulessen CO₂-sensibel entwickeln</li>
+                    <li>Bio-Pasta! Kochen, probieren, planen</li>
+                    <li>Cafeteria-Angebote preistauglich gestalten</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -169,7 +172,7 @@
 
         <form class="form form-anmeldung" action="#" method="post" novalidate>
           <fieldset class="form-fieldset">
-            <legend>Persönliche Daten</legend>
+            <legend>Anmeldung zur Jahrestagung in Braunschweig</legend>
 
             <div class="form-row">
               <label for="vorname">Vorname *</label>
@@ -182,66 +185,55 @@
             </div>
 
             <div class="form-row">
-              <label for="email">E Mail *</label>
+              <label for="email">E-Mail *</label>
               <input id="email" name="email" type="email" required>
             </div>
-          </fieldset>
-
-          <!-- Zusatzfelder für Mitglieder -->
-          <fieldset class="form-fieldset form-members-only section-members-only is-hidden">
-            <legend>Zusätzliche Angaben für Mitglieder</legend>
-
             <div class="form-row">
-              <label for="caterer">Anschrift des NASCH Caterers, für den ich arbeite</label>
-              <textarea id="caterer" name="caterer" rows="2"></textarea>
+              <label for="caterer">NASCH Caterer, für den ich arbeite *</label>
+              <input id="caterer" name="caterer" type="text" required>
             </div>
 
             <div class="form-row">
-              <label for="funktion">In folgender Funktion</label>
-              <input id="funktion" name="funktion" type="text">
+              <label for="funktion">In folgender Funktion *</label>
+              <input id="funktion" name="funktion" type="text" required>
             </div>
 
             <div class="form-row">
-              <label for="telefon">Telefonisch erreichbar</label>
-              <input id="telefon" name="telefon" type="tel">
-            </div>
-          </fieldset>
-
-          <fieldset class="form-fieldset">
-            <legend>Teilnahme</legend>
-
-            <div class="form-row form-members-only section-members-only is-hidden">
-              <label>
-                <input type="checkbox" name="teilnahme_dienstag" value="dienstag">
-                Dienstag, 10. März
-              </label>
+              <label for="telefon">Telefon *</label>
+              <input id="telefon" name="telefon" type="tel" required>
             </div>
 
             <div class="form-row">
-              <label>
-                <input type="checkbox" name="teilnahme_mittwoch" value="mittwoch" required>
-                Mittwoch, 11. März
-              </label>
+              <label for="essen">Ich esse *</label>
+              <select id="essen" name="essen" required>
+                <option value="">Bitte auswählen</option>
+                <option value="fleisch">mit Fleisch</option>
+                <option value="vegetarisch">vegetarisch</option>
+                <option value="vegan">vegan</option>
+              </select>
             </div>
 
             <div class="form-row">
-              <span>Ich benötige eine Übernachtung *</span>
-              <div class="form-options">
-                <label>
-                  <input type="radio" name="uebernachtung" value="ja" required>
-                  Ja
-                </label>
-                <label>
-                  <input type="radio" name="uebernachtung" value="nein" required>
-                  Nein
-                </label>
-              </div>
+              <label for="unvertraeglichkeiten">Unverträglichkeiten</label>
+              <textarea id="unvertraeglichkeiten" name="unvertraeglichkeiten" rows="2"></textarea>
+            </div>
+
+            <div class="form-row">
+              <label for="reise">Ich reise *</label>
+              <select id="reise" name="reise" required>
+                <option value="">Bitte auswählen</option>
+                <option value="auto">mit dem Auto</option>
+                <option value="bahn">mit der Bahn</option>
+              </select>
             </div>
           </fieldset>
 
           <p class="form-hint">* Pflichtfelder</p>
 
-          <button class="btn btn-primary" type="submit">Anmeldung absenden</button>
+          <div class="form-submit">
+            <button class="btn btn-primary" type="submit">Anmeldung absenden</button>
+            <p>Bei Fragen kontaktieren Sie bitte das Team.</p>
+          </div>
         </form>
       </section>
 
@@ -251,18 +243,20 @@
           <h2 id="download-heading">Downloads</h2>
         </header>
 
-        <!-- Hinweis für nicht eingeloggte -->
-        <div class="download-locked section-members-logged-out">
-          <p>Dieser Bereich ist nur für Mitglieder zugänglich.</p>
-          <p>Bitte melden Sie sich an, um die Dokumente herunterzuladen.</p>
-        </div>
-
-        <!-- Downloadliste nach Login -->
-        <div class="download-list section-members-only is-hidden">
+        <div class="download-list">
           <article class="download-item">
-            <h3>Nachhaltige Rezepte</h3>
-            <p>Exklusive Rezepte mit regionalen und saisonalen Zutaten.</p>
-            <a href="downloads/rezepte.pdf" class="btn btn-secondary">Download</a>
+            <div>
+              <h3>Programm</h3>
+              <p>Der Ablauf des Tages für einen gelungenen Ablauf.</p>
+            </div>
+            <a href="downloads/programm.pdf" class="btn btn-secondary">Download</a>
+          </article>
+          <article class="download-item">
+            <div>
+              <h3>FAQ</h3>
+              <p>Antworten auf häufig gestellte Fragen zur Jahrestagung.</p>
+            </div>
+            <a href="downloads/faq.pdf" class="btn btn-secondary">Download</a>
           </article>
         </div>
       </section>
@@ -311,6 +305,7 @@
             <li><a href="#kontakt">Kontakt</a></li>
           </ul>
         </nav>
+        <p class="footer-note">Stand: März 2026 – aktuelle Version der Landingpage</p>
       </div>
     </footer>
 
