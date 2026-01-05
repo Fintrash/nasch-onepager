@@ -1,256 +1,280 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NASCH e. V. – Jahrestagung 2026</title>
-
-  <link rel="stylesheet" href="css/modern-normalize.css">
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASCH e.V. - Netzwerk anspruchsvolles Schulessen</title>
+    <link rel="stylesheet" href="css/modern-normalize.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav__logo">
+                    <img src="assets/icons/logo.svg" alt="NASCH">
+                </div>
+                <ul class="nav__menu">
+                    <li><a href="#start">Start</a></li>
+                    <li><a href="#tagung">Tagung</a></li>
+                    <li><a href="#anmeldung">Anmeldung</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li class="member-only hidden"><a href="#mitglieder">Mitgliederversammlung</a></li>
+                    <li class="member-only hidden"><a href="#downloads">Download</a></li>
+                </ul>
+                <button class="nav__login" id="loginBtn">
+                    <img src="assets/icons/lock-closed.svg" alt="Login" id="loginIcon">
+                </button>
+            </nav>
+        </div>
+    </header>
 
-<header class="header">
-  <div class="inner">
-    <img src="assets/icons/logo.svg" class="logo" alt="NASCH Logo">
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal hidden">
+        <div class="modal__content">
+            <h2>Mitglieder Login</h2>
+            <form id="loginForm">
+                <div class="form__group">
+                    <label for="username">Benutzername</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form__group">
+                    <label for="password">Passwort</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn btn--primary">Anmelden</button>
+                <button type="button" class="btn btn--secondary" id="closeModal">Abbrechen</button>
+            </form>
+        </div>
+    </div>
 
-    <nav class="nav">
-      <a href="#start">Start</a>
-      <a href="#ueberuns">Tagung</a>
-      <a href="#anmeldung">Anmeldung</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
+    <main>
+        <!-- Hero -->
+        <section id="start" class="hero">
+            <img class="hero__bg" src="assets/graphics/hero_background.svg" alt="">
+            <div class="container">
+                <div class="hero__grid">
+                    <div class="hero__text">
+                        <h1>Gemeinsam für<br><span class="highlight">besseres</span><br>Schulessen</h1>
+                        <div class="hero__buttons">
+                            <a href="#about" class="btn btn--primary">Mehr erfahren</a>
+                            <a href="#anmeldung" class="btn btn--secondary">Zur Anmeldung</a>
+                        </div>
+                        <div class="member-welcome member-only hidden">
+                            <p>Willkommen zurück!</p>
+                        </div>
+                    </div>
+                    <div class="hero__image">
+                        <img src="assets/img/Hero_KinderGemuese_edit.png" alt="Kinder mit Gemüse">
+                    </div>
+                </div>
+                <div class="hero__scroll">Scroll</div>
+            </div>
+        </section>
 
-    <button class="login-btn">
-      <img src="assets/icons/lock-closed.svg" alt="">
-      Mitglied Login
+        <!-- About -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about__grid">
+                    <div class="about__image">
+                        <img src="assets/img/Anbau_edit.png" alt="Anbau">
+                    </div>
+                    <div class="about__text">
+                        <p class="label">IM SCHATTEN // GESUNDHEIT</p>
+                        <p>Im „Netzwerk anspruchsvolles Schulessen" (NASCH e.V.) arbeiten deutschlandweit Caterer zusammen, die regionale Bio-Zutaten verwenden und das Kochen mit den Kindern forcieren. Jedes Jahr findet ein Netzwerktreffen in einem anderen Ort statt.</p>
+                        <p class="highlight-text">Diesmal ist das Braunschweig.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tagung -->
+        <section id="tagung" class="tagung">
+            <div class="container">
+                <h2 class="section-title">Jahrestagung 2026</h2>
+                <div class="tagung__grid">
+                    <div class="tagung__image">
+                        <img src="assets/img/Tagung_edit.png" alt="Tagung">
+                    </div>
+                    <div class="tagung__info">
+                        <div class="info-card">
+                            <div class="info-icon info-icon--green">
+                                <img src="assets/graphics/icon-background.svg" alt="">
+                                <span>📅</span>
+                            </div>
+                            <div>
+                                <h4>Datum</h4>
+                                <p>Mittwoch, 11. März 2026</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon info-icon--yellow">
+                                <img src="assets/graphics/icon-background.svg" alt="">
+                                <span>📍</span>
+                            </div>
+                            <div>
+                                <h4>Ort</h4>
+                                <p>Braunschweig</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon info-icon--orange">
+                                <img src="assets/graphics/icon-background.svg" alt="">
+                                <span>🕒</span>
+                            </div>
+                            <div>
+                                <h4>Zeiten</h4>
+                                <p>10:00 - 17:00 Uhr</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="programm">
+                    <h3>Programm</h3>
+                    <div class="programm__list">
+                        <div class="programm__item">
+                            <span class="time">10:00</span>
+                            <p>Pressekonferenz der NASCH-Koordination</p>
+                        </div>
+                        <div class="programm__item">
+                            <span class="time">10:00</span>
+                            <p>Probekochen mit Schüler/-innen der 4. Klasse<br><small>Parallel zur Pressekonferenz: Grundschule an der Wendenstraße</small></p>
+                        </div>
+                        <div class="programm__item">
+                            <span class="time">10:30</span>
+                            <p>Was kommt auf den Tisch? Wer beim Schulessen mitredet<br><small>Öffentlicher Vortrag mit Diskussion. Bemerkenswerte Beispiele aus den Bundesländern. Referentin: Cornelia Zschick, Hamburg</small></p>
+                        </div>
+                        <div class="programm__item">
+                            <span class="time">12:30</span>
+                            <p>Mittagessen</p>
+                        </div>
+                        <div class="programm__item">
+                            <span class="time">14:00</span>
+                            <p>Kocherfahrungen von Schulkindern<br><small>Wie es uns erging, wie es uns schmeckte. Viertklässler/-innen berichten über ihre Kocherfahrungen</small></p>
+                        </div>
+                        <div class="programm__item">
+                            <span class="time">14:30</span>
+                            <p>Arbeit in Kleingruppen<br><small>I. Braunschweiger Elternbeiräte und Schulleitungen im Gespräch mit NASCH-Caterern<br>II. Lebensmittelabfälle reduzieren und Entsorgung<br>III. DGE-Qualitätsstandards und Zertifizierung</small></p>
+                        </div>
+                        <div class="programm__item">
+                            <span class="time">16:30</span>
+                            <p>Rückblick und Ausblick<br><small>Gemeinsamer Abschluss der Tagung</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Anmeldung -->
+        <section id="anmeldung" class="anmeldung">
+            <img class="circle circle--1" src="assets/graphics/kreidekreis.svg" alt="">
+            <div class="container">
+                <h2 class="section-title">Anmeldung zur<br>Jahrestagung</h2>
+                <p class="intro">Ich will an der NASCH-Jahrestagung 2026<br>Jugendherberge Braunschweig, Wendenstraße 30 teilnehmen:</p>
+                <form class="form">
+                    <div class="form__row">
+                        <div class="form__group">
+                            <label>Vorname *</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form__group">
+                            <label>Name *</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+                    <div class="form__group">
+                        <label>E-Mail *</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="member-only hidden">
+                        <div class="form__group">
+                            <label>Anschrift des NASCH-Caterers</label>
+                            <input type="text">
+                        </div>
+                        <div class="form__group">
+                            <label>Funktion</label>
+                            <input type="text">
+                        </div>
+                        <div class="form__group">
+                            <label>Telefonnummer</label>
+                            <input type="tel">
+                        </div>
+                    </div>
+                    <div class="form__group">
+                        <label>Ich nehme teil: *</label>
+                        <label class="radio"><input type="radio" name="teil" checked> Mittwoch, 11. März</label>
+                    </div>
+                    <div class="form__group">
+                        <label>Ich benötige eine Übernachtung *</label>
+                        <div class="radio-group">
+                            <label class="radio"><input type="radio" name="ueber"> Ja</label>
+                            <label class="radio"><input type="radio" name="ueber" checked> Nein</label>
+                        </div>
+                    </div>
+                    <p class="note">* Pflichtfelder</p>
+                    <button type="submit" class="btn btn--primary btn--full">✓ Anmeldung absenden</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Downloads -->
+        <section id="downloads" class="downloads">
+            <div class="container">
+                <h2 class="section-title">Downloads</h2>
+                <div class="downloads__locked">
+                    <div class="lock-icon">🔒</div>
+                    <h3>Dieser Bereich ist nur für<br>Mitglieder zugänglich</h3>
+                    <p>Melden Sie sich an, um auf exklusive Dokumente,<br>Berichte und Ressourcen zuzugreifen.</p>
+                </div>
+                <div class="downloads__content member-only hidden">
+                    <div class="download-card">
+                        <h4>Jahresbericht 2025</h4>
+                        <a href="#" class="btn btn--download">Download PDF</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="kontakt" class="footer">
+        <img class="circle circle--2" src="assets/graphics/kreidekreis.svg" alt="">
+        <img class="circle circle--3" src="assets/graphics/kreidekreis.svg" alt="">
+        <div class="container">
+            <a href="#" class="impressum-btn">IMPRESSUM</a>
+            <div class="footer__grid">
+                <div>
+                    <h4>NASCH e.V.</h4>
+                    <p>Netzwerk anspruchsvolles Schulessen</p>
+                    <p><strong>Koordinationsbüro</strong></p>
+                    <p>Gneisenaustraße 17<br>10961 Berlin</p>
+                </div>
+                <div>
+                    <h4>Kontakt</h4>
+                    <p>buero@nasch-berlin.de<br>Tel.: 030/12345670<br>Fax: 030/12345677<br>www.nasch-berlin.de</p>
+                </div>
+                <div>
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#start">Start</a></li>
+                        <li><a href="#tagung">Tagung</a></li>
+                        <li><a href="#anmeldung">Anmeldung</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2025 NASCH e.V. Alle Rechte vorbehalten.<br>Vertretungsberechtigt: Marianne Salzhuber<br>Vereinsregister Charlottenburg: XXX276633</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTop" class="scroll-top hidden">
+        <img src="assets/icons/arrow-up.svg" alt="Top">
     </button>
-  </div>
-</header>
 
-<main>
-
-<!-- HERO -->
-<section id="start" class="hero section">
-  <div class="inner two-col">
-    
-    <div class="hero-text">
-      <div class="tags">
-        <span class="tag">Caterer</span>
-        <span class="tag">Gesund</span>
-        <span class="tag">Nachhaltig</span>
-      </div>
-
-      <h1>Gemeinsam für<br><span class="u-accent">besseres</span> Schulessen</h1>
-
-      <p class="hero-subline">
-        Das Netzwerk anspruchsvolles Schulessen bringt Praktikerinnen und Praktiker zusammen, damit Schulessen besser wird.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#ueberuns" class="btn primary">Mehr erfahren</a>
-        <a href="#anmeldung" class="btn ghost">Zur Anmeldung</a>
-      </div>
-    </div>
-
-    <div class="hero-media">
-      <img src="assets/images/Hero_KinderGemuese_edit.png" alt="">
-      <img src="assets/graphics/underline-green.svg" class="underline">
-      <img src="assets/graphics/circles-background.svg" class="background-circle">
-    </div>
-
-  </div>
-
-  <div class="scroll-hint">Scroll ▼</div>
-</section>
-
-<!-- ÜBER UNS -->
-<section id="ueberuns" class="ueberuns section section-light">
-  <div class="inner two-col">
-    
-    <div class="img-frame">
-      <img src="assets/images/Anbau_edit.png" alt="">
-      <img src="assets/graphics/sketch-frame.svg" class="sketch-frame">
-    </div>
-
-    <article class="textblock">
-      <div class="tags small">
-        <span class="tag">Caterer</span>
-        <span class="tag">Gesund</span>
-        <span class="tag">Netzwerk</span>
-      </div>
-
-      <h2 class="h2 u-accent-line">Im Netzwerk anspruchsvolles Schulessen</h2>
-
-      <p>
-        Das Netzwerk anspruchsvolles Schulessen (NASCH e. V.) bringt deutschlandweit Caterer zusammen, die regionale Bio-Produkte verwenden und das Kochen mit den Kindern in den Mittelpunkt stellen.
-      </p>
-      <p>
-        Jedes Jahr findet eine Netzwerktagung in einer anderen Stadt statt. Diesmal ist das Braunschweig.
-      </p>
-    </article>
-
-  </div>
-</section>
-
-<!-- JAHRESTAGUNG 2026 -->
-<section class="tagung section">
-  <div class="inner">
-    
-    <h2 class="h2 u-accent-line center">Jahrestagung 2026</h2>
-
-    <div class="two-col tagung-grid">
-
-      <div class="tagung-img">
-        <img src="assets/images/Tagung_edit.png" alt="">
-      </div>
-
-      <aside class="facts">
-        <div class="fact">
-          <div class="icon-bg"><span>📅</span></div>
-          <div>
-            <div class="label">Datum</div>
-            <div class="value">11. März 2026</div>
-          </div>
-        </div>
-        <div class="fact">
-          <div class="icon-bg"><span>📍</span></div>
-          <div>
-            <div class="label">Ort</div>
-            <div class="value">Braunschweig</div>
-          </div>
-        </div>
-        <div class="fact">
-          <div class="icon-bg"><span>⏰</span></div>
-          <div>
-            <div class="label">Zeiten</div>
-            <div class="value">10:00 – 17:00 Uhr</div>
-          </div>
-        </div>
-      </aside>
-
-    </div>
-
-    <div class="programm">
-      <div class="programm-card">
-        <div class="p-item">
-          <div class="time">10:00</div>
-          <div class="p-text">Begrüßung durch die NASCH Koordination</div>
-        </div>
-
-        <div class="p-item">
-          <div class="time">10:30</div>
-          <div class="p-text">Impulsvortrag mit Einblicken in aktuelle Entwicklungen des Schulessens</div>
-        </div>
-
-        <div class="p-item">
-          <div class="time">11:30</div>
-          <div class="p-text">Wie kommen wir der Vision näher, dass gutes Schulessen überall selbstverständlich ist?</div>
-        </div>
-
-        <div class="p-item">
-          <div class="time">12:30</div>
-          <div class="p-text">Mittagspause</div>
-        </div>
-
-        <div class="p-item">
-          <div class="time">14:00</div>
-          <div class="p-text">Küchenerfahrungen von Schulcaterern – Austausch und Praxisberichte</div>
-        </div>
-
-        <div class="p-item">
-          <div class="time">16:00</div>
-          <div class="p-text">Ausblick und Abschluss der Tagung</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ANMELDUNG -->
-<section id="anmeldung" class="anmeldung section section-dark">
-  <div class="inner">
-    
-    <h2 class="h2 center white u-accent-line">Anmeldung zur Jahrestagung</h2>
-    <p class="subline center white">Ich will an der NASCH Jahrestagung 2026 in der Jugendherberge Braunschweig teilnehmen.</p>
-
-    <div class="form-wrapper">
-      <form class="form">
-        <div class="grid">
-          <label>Vorname *<input type="text"></label>
-          <label>Name *<input type="text"></label>
-          <label>E-Mail *<input type="email"></label>
-          <label>Telefon<input type="tel"></label>
-        </div>
-
-        <label>NASCH Caterer<input type="text"></label>
-        <label>Funktion<input type="text"></label>
-
-        <label class="full">Ich nehme teil am:
-          <input type="checkbox" checked> Jahrestagung am 11. März 2026
-        </label>
-
-        <label class="full">Ich benötige eine Übernachtung *
-          <div class="radio">
-            <label><input type="radio" name="overnight">Ja</label>
-            <label><input type="radio" name="overnight">Nein</label>
-          </div>
-        </label>
-
-        <p class="hint">* Pflichtfelder</p>
-
-        <button class="btn primary full">Anmeldung absenden</button>
-      </form>
-    </div>
-
-  </div>
-</section>
-
-<!-- DOWNLOADS -->
-<section class="downloads section">
-  <div class="inner center">
-    
-    <h2 class="h2 u-accent-line">Downloads</h2>
-
-    <div class="download-card">
-      <div class="icon">🔒</div>
-      <p class="title">Dieser Bereich ist nur für Mitglieder zugänglich</p>
-      <p class="text">Melden Sie sich an, um auf wichtige Berichte und Ressourcen zuzugreifen.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer id="kontakt" class="footer">
-  <div class="inner footer-grid">
-
-    <div>
-      <span class="chip">NASCH e. V.</span>
-      <p>Netzwerk anspruchsvolles Schulessen<br>für gutes Essen an Schulen.</p>
-      <p>Gneisenaustraße 17<br>10961 Berlin</p>
-    </div>
-
-    <div>
-      <h3>Navigation</h3>
-      <ul>
-        <li><a href="#start">Start</a></li>
-        <li><a href="#ueberuns">Tagung</a></li>
-        <li><a href="#anmeldung">Anmeldung</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h3>Kontakt</h3>
-      <p>Tel.: 030 / 12345670<br>E-Mail: buero@nasch-berlin.de</p>
-    </div>
-
-  </div>
-</footer>
-
-</main>
-
+    <script src="js/app.js"></script>
 </body>
 </html>
