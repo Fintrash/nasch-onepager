@@ -41,13 +41,13 @@
     --color-yellow: #F4D882;
     --color-white: #FFFFFF;
     --color-bg-light: rgba(244, 216, 130, 0.15);
-    
+
     --font-family: 'Poppins', sans-serif;
     --container-width: 1160px;
     --gutter: 60px;
     --gap: 48px;
     --radius: 28px;
-    
+
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -78,7 +78,7 @@ body {
 h1 {
     font-size: 72px;
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.02;
 }
 
 h2 {
@@ -139,7 +139,6 @@ img {
 .nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 .nav__logo img {
@@ -147,6 +146,7 @@ img {
 }
 
 .nav__menu {
+    margin-left: auto;
     display: flex;
     list-style: none;
     gap: 32px;
@@ -154,6 +154,7 @@ img {
 
 .nav__menu a {
     font-size: 16px;
+    font-weight: 600;
     transition: color 0.3s;
 }
 
@@ -162,25 +163,46 @@ img {
 }
 
 .nav__login {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: var(--color-accent);
-    border: none;
-    display: flex;
+    margin-left: 24px;
+
+    height: 44px;
+    padding: 0 22px 0 18px;
+
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
+    gap: 10px;
+
+    border: 0;
+    border-radius: 999px;
+    background: var(--color-accent);
+    color: #fff;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .nav__login:hover {
-    transform: scale(1.05);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
 }
 
-.nav__login img {
-    width: 24px;
-    height: 24px;
+.nav__login:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+.nav__loginIcon {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+}
+
+.nav__loginText {
+    white-space: nowrap;
 }
 
 /* ==========================================================================
@@ -269,7 +291,7 @@ main {
 
 .hero {
     position: relative;
-    padding: 80px 0;
+    padding: 70px 0;
     overflow: hidden;
 }
 
@@ -292,11 +314,11 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--gap);
-    align-items: center;
+    align-items: start;
 }
 
 .hero h1 {
-    margin-bottom: 40px;
+    margin-bottom: 28px;
 }
 
 .hero .highlight {
@@ -334,6 +356,43 @@ main {
     opacity: 0.6;
 }
 
+.hero__tags {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 18px;
+}
+
+.hero__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+/* Punkt */
+.hero__tag::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.hero__tag--quality::before {
+    background: var(--color-accent);
+}
+
+.hero__tag--health::before {
+    background: var(--color-yellow);
+}
+
+.hero__tag--sustain::before {
+    background: var(--color-orange);
+}
+
 /* ==========================================================================
    About
    ========================================================================== */
@@ -362,6 +421,42 @@ main {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 16px;
+}
+
+.about__meta {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 18px;
+}
+
+.about__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+.about__tag::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.about__tag--quality::before {
+    background: var(--color-accent);
+}
+
+.about__tag--health::before {
+    background: var(--color-yellow);
+}
+
+.about__tag--network::before {
+    background: var(--color-orange);
 }
 
 .highlight-text {
@@ -477,12 +572,20 @@ main {
 
 .programm__item .time {
     flex-shrink: 0;
-    background: var(--color-accent);
-    color: white;
-    padding: 8px 20px;
-    border-radius: 12px;
-    font-weight: 600;
-    height: fit-content;
+    width: 86px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: url('../assets/graphics/icon-background.svg') no-repeat center;
+    background-size: contain;
+
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;
 }
 
 .programm__item small {
@@ -739,22 +842,22 @@ main {
     h1 {
         font-size: 48px;
     }
-    
+
     h2 {
         font-size: 36px;
     }
-    
+
     .hero__grid,
     .about__grid,
     .tagung__grid,
     .footer__grid {
         grid-template-columns: 1fr;
     }
-    
+
     .form__row {
         grid-template-columns: 1fr;
     }
-    
+
     .nav__menu {
         display: none;
     }
