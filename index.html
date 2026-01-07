@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,14 +26,8 @@
           <li class="member-only hidden"><a href="#downloads">Download</a></li>
         </ul>
 
-        <button
-          class="nav__login"
-          id="loginBtn"
-          type="button"
-          aria-controls="loginModal"
-          aria-expanded="false"
-        >
-          <img src="assets/icons/lock-closed.svg" alt="" id="loginIcon" class="nav__loginIcon" />
+        <button class="nav__login" id="loginBtn" type="button" aria-controls="loginModal" aria-expanded="false">
+          <img src="assets/icons/Icon_Login.svg" alt="" id="loginIcon" class="nav__loginIcon" />
           <span class="nav__loginText">Mitglieder Login</span>
         </button>
       </nav>
@@ -64,7 +59,7 @@
 
   <main>
     <section id="start" class="hero" aria-labelledby="heroTitle">
-      <img class="hero__bg" src="assets/graphics/hero_background.svg" alt="" />
+      <img class="hero__bg" src="assets/graphics/Header_BG.png" alt="" />
 
       <div class="container">
         <div class="hero__grid">
@@ -90,7 +85,7 @@
           </div>
 
           <figure class="hero__image">
-            <img src="assets/img/Hero_KinderGemuese_edit.png" alt="Kinder mit Gemüse" />
+            <!-- <img src="assets/img/Hero_KinderGemuese_edit.png" alt="Kinder mit Gemüse" /> -->
           </figure>
         </div>
 
@@ -106,13 +101,13 @@
           </figure>
 
           <div class="about__text">
-            <h2 id="aboutTitle" class="visually-hidden">Über NASCH e.V.</h2>
-
             <p class="about__meta" aria-label="Schwerpunkte">
               <span class="about__tag about__tag--quality">Qualität</span>
               <span class="about__tag about__tag--health">Gesundheit</span>
               <span class="about__tag about__tag--network">Netzwerk</span>
             </p>
+
+            <h2 id="aboutTitle" class="visually-hidden">Über NASCH e.V.</h2>
 
             <p>
               Im „Netzwerk anspruchsvolles Schulessen" (NASCH e.V.) arbeiten deutschlandweit Caterer zusammen, die
@@ -138,8 +133,8 @@
           <div class="tagung__info" aria-label="Tagungsdaten">
             <article class="info-card">
               <div class="info-icon info-icon--green" aria-hidden="true">
-                <img src="assets/graphics/icon-background.svg" alt="" />
-                <span>📅</span>
+                <span class="info-icon__bg"></span>
+                <img class="info-icon__fg" src="assets/icons/Icon_Cal.svg" alt="" />
               </div>
               <div>
                 <h3>Datum</h3>
@@ -149,8 +144,8 @@
 
             <article class="info-card">
               <div class="info-icon info-icon--yellow" aria-hidden="true">
-                <img src="assets/graphics/icon-background.svg" alt="" />
-                <span>📍</span>
+                <span class="info-icon__bg"></span>
+                <img class="info-icon__fg" src="assets/icons/Icon_GPS.svg" alt="" />
               </div>
               <div>
                 <h3>Ort</h3>
@@ -160,8 +155,8 @@
 
             <article class="info-card">
               <div class="info-icon info-icon--orange" aria-hidden="true">
-                <img src="assets/graphics/icon-background.svg" alt="" />
-                <span>🕒</span>
+                <span class="info-icon__bg"></span>
+                <img class="info-icon__fg" src="assets/icons/Icon_Uhr.svg" alt="" />
               </div>
               <div>
                 <h3>Zeiten</h3>
@@ -208,7 +203,8 @@
               <span class="time" aria-label="Uhrzeit">14:00</span>
               <p>
                 Kocherfahrungen von Schulkindern<br />
-                <small>Wie es uns erging, wie es uns schmeckte. Viertklässler/-innen berichten über ihre Kocherfahrungen</small>
+                <small>Wie es uns erging, wie es uns schmeckte. Viertklässler/-innen berichten über ihre
+                  Kocherfahrungen</small>
               </p>
             </article>
 
@@ -316,7 +312,7 @@
         <h2 id="downloadsTitle" class="section-title">Downloads</h2>
 
         <div class="downloads__locked">
-          <div class="lock-icon" aria-hidden="true">🔒</div>
+          <div class="lock-icon" aria-hidden="true"><img src="assets/icons/lock-closed.svg" alt="" /></div>
           <h3>Dieser Bereich ist nur für<br />Mitglieder zugänglich</h3>
           <p>
             Melden Sie sich an, um auf exklusive Dokumente,<br />
@@ -388,4 +384,5 @@
 
   <script src="js/app.js"></script>
 </body>
+
 </html>
