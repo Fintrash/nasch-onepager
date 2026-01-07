@@ -76,25 +76,27 @@ body {
 }
 
 h1 {
-    font-size: 72px;
+    font-size: 65px;
     font-weight: 700;
     line-height: 1.02;
 }
 
 h2 {
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 600;
     line-height: 1.1;
 }
 
 h3 {
-    font-size: 36px;
-    font-weight: 600;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.2;
 }
 
 h4 {
     font-size: 18px;
     font-weight: 600;
+    line-height: 1.1;
 }
 
 a {
@@ -118,7 +120,7 @@ img {
 }
 
 .member-only {
-    display: none;
+    display: revert;
 }
 
 .visually-hidden {
@@ -154,7 +156,7 @@ img {
 }
 
 .nav__logo img {
-    height: 40px;
+    height: 60px;
 }
 
 .nav__menu {
@@ -313,7 +315,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: scale-down;
     z-index: 0;
 }
 
@@ -530,31 +532,21 @@ main {
 .info-icon__bg {
     position: absolute;
     inset: 0;
-    display: block !important;
-    background-color: var(--color-accent) !important;
-    opacity: 0.6 !important;
-
-    -webkit-mask-image: url('../assets/graphics/icon-background.svg') !important;
-    -webkit-mask-repeat: no-repeat !important;
-    -webkit-mask-position: center !important;
-    -webkit-mask-size: contain !important;
-
-    mask-image: url('../assets/graphics/icon-background.svg') !important;
-    mask-repeat: no-repeat !important;
-    mask-position: center !important;
-    mask-size: contain !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 .info-icon--green .info-icon__bg {
-    background-color: var(--color-accent) !important;
+    background-image: url("../assets/graphics/icon-background-green.svg");
 }
 
 .info-icon--yellow .info-icon__bg {
-    background-color: var(--color-yellow) !important;
+    background-image: url("../assets/graphics/icon-background-yellow.svg");
 }
 
 .info-icon--orange .info-icon__bg {
-    background-color: var(--color-orange) !important;
+    background-image: url("../assets/graphics/icon-background-orange.svg");
 }
 
 .info-icon__fg {
@@ -564,6 +556,7 @@ main {
     height: 28px;
     display: block;
 }
+
 
 /* ==========================================================================
    Programm
@@ -589,7 +582,7 @@ main {
     display: flex;
     gap: 24px;
     padding: 24px;
-    background: white;
+    background: var(--color-bg-light);
     border-radius: var(--radius);
     box-shadow: var(--shadow-sm);
 }
@@ -734,7 +727,7 @@ main {
 
 .downloads {
     padding: 100px 0;
-    background: var(--color-bg-light);
+    background: white;
 }
 
 .downloads__locked {
@@ -742,12 +735,18 @@ main {
     margin: 0 auto;
     text-align: center;
     padding: 60px 40px;
-    background: white;
+    background: var(--color-bg-light);
     border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
 }
 
 .lock-icon {
-    font-size: 64px;
+    width: 40px;
+    height: 40px;
     margin-bottom: 24px;
 }
 
@@ -791,15 +790,18 @@ main {
 }
 
 .circle--2 {
-    width: 450px;
-    bottom: -120px;
-    right: -100px;
+    width: 230px;
+    bottom: 35%;
+    right: -10%;
+    opacity: 1;
 }
 
 .circle--3 {
-    width: 350px;
-    bottom: -80px;
-    left: -80px;
+    width: 300px;
+    bottom: -35%;
+    left: 40%;
+    opacity: 1;
+    z-index: 20;
 }
 
 .footer .container {
@@ -809,7 +811,7 @@ main {
 
 .footer__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--gap);
     margin-bottom: 60px;
 }
@@ -826,21 +828,17 @@ main {
     margin-bottom: 12px;
 }
 
-.footer a {
-    opacity: 0.9;
-}
-
 .footer a:hover {
-    opacity: 1;
     color: var(--color-accent);
 }
 
 .footer__bottom {
-    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: start;
     padding-top: 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     font-size: 14px;
-    opacity: 0.8;
 }
 
 /* ==========================================================================
@@ -862,6 +860,14 @@ main {
     cursor: pointer;
     box-shadow: var(--shadow-lg);
     z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .scroll-top:hover {

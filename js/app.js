@@ -1,185 +1,135 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Elemente sammeln
-  const loginToggleBtn = document.querySelector(".login-toggle");
-  const loginDialog = document.getElementById("login-dialog");
-  const loginCloseBtn = loginDialog ? loginDialog.querySelector(".login-dialog-close") : null;
-  const loginForm = loginDialog ? loginDialog.querySelector(".form-login") : null;
-  const scrollTopBtn = document.querySelector(".scroll-to-top");
-  const menuToggleBtn = document.querySelector(".menu-toggle");
-  const mainNav = document.getElementById("main-nav");
+"use strict";
 
-  const memberSections = document.querySelectorAll(".section-members-only");
-  const memberNavItems = document.querySelectorAll(".nav-item-members-only");
-  const loggedOutBlocks = document.querySelectorAll(".section-members-logged-out, .download-locked");
-  const loginIcon = document.querySelector(".login-icon");
+document.addEventListener("DOMContentLoaded", () => {
+  const loginBtn = document.getElementById("loginToggleBtn");
+  const loginText = document.querySelector(".nav__loginText");
+  const loginIcon = document.getElementById("loginIcon");
 
-  let lastFocusedBeforeDialog = null;
+  const loginModal = document.getElementById("loginModal");
+  const closeModalBtn = document.getElementById("closeModal");
+  const loginForm = document.getElementById("loginForm");
 
-  // Login Zustand (optional in Session speichern)
+  const usernameInput = document.getElementById("username");
+  const passwordInput = document.getElementById("password");
+
+  const scrollTopBtn = document.getElementById("scrollTop");
+
+  const memberOnlyEls = document.querySelectorAll(".member-only");
+  const loggedOutBlocks = document.querySelectorAll(".downloads__locked");
+
   const SESSION_KEY = "naschMemberLoggedIn";
   let isMember = sessionStorage.getItem(SESSION_KEY) === "1";
 
-  // Member Zustand anwenden
-  function updateMemberVisibility() {
+  let lastFocusedBeforeModal = null;
+
+  function applyMemberState() {
     if (isMember) {
-      memberSections.forEach(el => el.classList.remove("is-hidden"));
-      memberNavItems.forEach(el => el.classList.remove("is-hidden"));
-      loggedOutBlocks.forEach(el => el.classList.add("is-hidden"));
-      if (loginIcon) {
-        loginIcon.classList.remove("login-icon-logged-out");
-        loginIcon.classList.add("login-icon-logged-in");
-      }
+      memberOnlyEls.forEach(el => el.classList.remove("hidden"));
+      loggedOutBlocks.forEach(el => el.classList.add("hidden"));
+
+      if (loginText) loginText.textContent = "Logout";
+      if (loginIcon) loginIcon.src = "assets/icons/Icon_Logout.svg";
     } else {
-      memberSections.forEach(el => el.classList.add("is-hidden"));
-      memberNavItems.forEach(el => el.classList.add("is-hidden"));
-      loggedOutBlocks.forEach(el => el.classList.remove("is-hidden"));
-      if (loginIcon) {
-        loginIcon.classList.add("login-icon-logged-out");
-        loginIcon.classList.remove("login-icon-logged-in");
-      }
+      memberOnlyEls.forEach(el => el.classList.add("hidden"));
+      loggedOutBlocks.forEach(el => el.classList.remove("hidden"));
+
+      if (loginText) loginText.textContent = "Mitglieder Login";
+      if (loginIcon) loginIcon.src = "assets/icons/Icon_Login.svg";
+    }
+
+    if (loginBtn) loginBtn.setAttribute("aria-expanded", "false");
+  }
+
+  function openModal() {
+    if (!loginModal) return;
+
+    lastFocusedBeforeModal = document.activeElement;
+    loginModal.classList.remove("hidden");
+    loginBtn?.setAttribute("aria-expanded", "true");
+
+    const firstInput = loginModal.querySelector("input");
+    if (firstInput) firstInput.focus();
+  }
+
+  function closeModal() {
+    if (!loginModal) return;
+
+    loginModal.classList.add("hidden");
+    loginBtn?.setAttribute("aria-expanded", "false");
+
+    if (lastFocusedBeforeModal?.focus) {
+      lastFocusedBeforeModal.focus();
     }
   }
 
-  updateMemberVisibility();
+  applyMemberState();
 
-  // Login Dialog
-  function openLoginDialog() {
-    if (!loginDialog) return;
-    lastFocusedBeforeDialog = document.activeElement;
-    loginDialog.hidden = false;
-    loginDialog.setAttribute("aria-hidden", "false");
-    if (loginToggleBtn) {
-      loginToggleBtn.setAttribute("aria-expanded", "true");
-    }
-
-    const firstInput = loginDialog.querySelector("input");
-    if (firstInput) {
-      firstInput.focus();
-    }
-  }
-
-  function closeLoginDialog() {
-    if (!loginDialog) return;
-    loginDialog.hidden = true;
-    loginDialog.setAttribute("aria-hidden", "true");
-    if (loginToggleBtn) {
-      loginToggleBtn.setAttribute("aria-expanded", "false");
-    }
-    if (lastFocusedBeforeDialog && typeof lastFocusedBeforeDialog.focus === "function") {
-      lastFocusedBeforeDialog.focus();
-    }
-  }
-
-  // Klick auf Login Icon
-  if (loginToggleBtn) {
-    loginToggleBtn.addEventListener("click", function () {
-      if (loginDialog && loginDialog.hidden) {
-        openLoginDialog();
+  if (loginBtn) {
+    loginBtn.addEventListener("click", () => {
+      if (isMember) {
+        sessionStorage.removeItem(SESSION_KEY);
+        isMember = false;
+        applyMemberState();
+        closeModal();
       } else {
-        closeLoginDialog();
+        openModal();
       }
     });
   }
 
-  // Dialog schließen Button
-  if (loginCloseBtn) {
-    loginCloseBtn.addEventListener("click", function () {
-      closeLoginDialog();
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener("click", closeModal);
+  }
+
+  if (loginModal) {
+    loginModal.addEventListener("click", (e) => {
+      if (e.target === loginModal) closeModal();
     });
   }
 
-  // Klick auf Overlay schließt Dialog
-  if (loginDialog) {
-    loginDialog.addEventListener("click", function (event) {
-      if (event.target === loginDialog) {
-        closeLoginDialog();
-      }
-    });
-  }
-
-  // ESC schließt Dialog
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && loginDialog && !loginDialog.hidden) {
-      closeLoginDialog();
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && loginModal && !loginModal.classList.contains("hidden")) {
+      closeModal();
     }
   });
 
-  // Login Formular behandeln
   if (loginForm) {
-    loginForm.addEventListener("submit", function (event) {
-      event.preventDefault();
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-      const usernameInput = loginForm.querySelector("#login-username");
-      const passwordInput = loginForm.querySelector("#login-password");
+      const username = usernameInput?.value.trim() || "";
+      const password = passwordInput?.value.trim() || "";
 
-      const username = usernameInput ? usernameInput.value.trim() : "";
-      const password = passwordInput ? passwordInput.value.trim() : "";
-
-      // Prüfungszugang
       if (username === "Mitglied" && password === "lecker") {
         isMember = true;
         sessionStorage.setItem(SESSION_KEY, "1");
-        updateMemberVisibility();
-        closeLoginDialog();
+        applyMemberState();
+        closeModal();
+        loginForm.reset();
       } else {
         alert("Benutzername oder Passwort sind falsch.");
       }
     });
   }
 
-  // Smooth Scroll für interne Links
-  const anchorLinks = document.querySelectorAll('a[href^="#"]');
-
-  anchorLinks.forEach(link => {
-    link.addEventListener("click", function (event) {
-      const targetId = link.getAttribute("href").substring(1);
-      const target = document.getElementById(targetId);
-      if (!target) return;
-
-      event.preventDefault();
-
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-
-      // Mobile Menü schließen nach Klick
-      if (mainNav && mainNav.classList.contains("is-open")) {
-        mainNav.classList.remove("is-open");
-        if (menuToggleBtn) {
-          menuToggleBtn.setAttribute("aria-expanded", "false");
-        }
-      }
-    });
-  });
-
-  // Scroll to top
-  function updateScrollTopButton() {
+  const updateScrollTopVisibility = () => {
     if (!scrollTopBtn) return;
+
     if (window.scrollY > 400) {
+      scrollTopBtn.classList.remove("hidden");
       scrollTopBtn.classList.add("visible");
     } else {
+      scrollTopBtn.classList.add("hidden");
       scrollTopBtn.classList.remove("visible");
     }
-  }
+  };
 
   if (scrollTopBtn) {
-    scrollTopBtn.addEventListener("click", function () {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    window.addEventListener("scroll", updateScrollTopButton);
-    updateScrollTopButton();
-  }
-
-  // Mobile Menü Toggle
-  if (menuToggleBtn && mainNav) {
-    menuToggleBtn.addEventListener("click", function () {
-      const isOpen = mainNav.classList.toggle("is-open");
-      menuToggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
+    window.addEventListener("scroll", updateScrollTopVisibility, { passive: true });
+    updateScrollTopVisibility();
   }
 });

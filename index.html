@@ -26,7 +26,7 @@
           <li class="member-only hidden"><a href="#downloads">Download</a></li>
         </ul>
 
-        <button class="nav__login" id="loginBtn" type="button" aria-controls="loginModal" aria-expanded="false">
+        <button class="nav__login" id="loginToggleBtn" type="button" aria-controls="loginModal" aria-expanded="false">
           <img src="assets/icons/Icon_Login.svg" alt="" id="loginIcon" class="nav__loginIcon" />
           <span class="nav__loginText">Mitglieder Login</span>
         </button>
@@ -83,10 +83,6 @@
 
             <p class="member-welcome member-only hidden">Willkommen zurück!</p>
           </div>
-
-          <figure class="hero__image">
-            <!-- <img src="assets/img/Hero_KinderGemuese_edit.png" alt="Kinder mit Gemüse" /> -->
-          </figure>
         </div>
 
         <p class="hero__scroll" aria-hidden="true">Scroll</p>
@@ -137,7 +133,7 @@
                 <img class="info-icon__fg" src="assets/icons/Icon_Cal.svg" alt="" />
               </div>
               <div>
-                <h3>Datum</h3>
+                <h4>Datum</h4>
                 <p>Mittwoch, 11. März 2026</p>
               </div>
             </article>
@@ -148,7 +144,7 @@
                 <img class="info-icon__fg" src="assets/icons/Icon_GPS.svg" alt="" />
               </div>
               <div>
-                <h3>Ort</h3>
+                <h4>Ort</h4>
                 <p>Braunschweig</p>
               </div>
             </article>
@@ -159,7 +155,7 @@
                 <img class="info-icon__fg" src="assets/icons/Icon_Uhr.svg" alt="" />
               </div>
               <div>
-                <h3>Zeiten</h3>
+                <h4>Zeiten</h4>
                 <p>10:00 - 17:00 Uhr</p>
               </div>
             </article>
@@ -314,7 +310,7 @@
         <div class="downloads__locked">
           <div class="lock-icon" aria-hidden="true"><img src="assets/icons/lock-closed.svg" alt="" /></div>
           <h3>Dieser Bereich ist nur für<br />Mitglieder zugänglich</h3>
-          <p>
+          <p style="margin-top: 20px;">
             Melden Sie sich an, um auf exklusive Dokumente,<br />
             Berichte und Ressourcen zuzugreifen.
           </p>
@@ -331,13 +327,11 @@
   </main>
 
   <footer id="kontakt" class="footer" aria-labelledby="footerTitle">
-    <img class="circle circle--2" src="assets/graphics/kreidekreis.svg" alt="" aria-hidden="true" />
+    <img class="circle circle--2" src="assets/graphics/kreidekreis-yellow.svg" alt="" aria-hidden="true" />
     <img class="circle circle--3" src="assets/graphics/kreidekreis.svg" alt="" aria-hidden="true" />
 
     <div class="container">
       <h2 id="footerTitle" class="visually-hidden">Kontakt und Impressum</h2>
-
-      <a href="#" class="impressum-btn">IMPRESSUM</a>
 
       <div class="footer__grid">
         <section aria-label="Adresse">
@@ -346,19 +340,11 @@
           <p><strong>Koordinationsbüro</strong></p>
           <p>Gneisenaustraße 17<br />10961 Berlin</p>
         </section>
+<section></section>
 
-        <section aria-label="Kontakt">
-          <h3>Kontakt</h3>
-          <p>
-            buero@nasch-berlin.de<br />
-            Tel.: 030/12345670<br />
-            Fax: 030/12345677<br />
-            www.nasch-berlin.de
-          </p>
-        </section>
 
         <nav aria-label="Footer Navigation">
-          <h3>Navigation</h3>
+          <h4>Navigation</h4>
           <ul>
             <li><a href="#start">Start</a></li>
             <li><a href="#tagung">Tagung</a></li>
@@ -366,19 +352,28 @@
             <li><a href="#kontakt">Kontakt</a></li>
           </ul>
         </nav>
+                <section aria-label="Kontakt">
+          <h4>Kontakt</h4>
+          <p>
+            buero@nasch-berlin.de<br />
+            Tel.: 030/12345670<br />
+            Fax: 030/12345677<br />
+            www.nasch-berlin.de
+          </p>
+        </section>
       </div>
 
       <div class="footer__bottom">
         <p>
           © 2025 NASCH e.V. Alle Rechte vorbehalten.<br />
-          Vertretungsberechtigt: Marianne Salzhuber<br />
-          Vereinsregister Charlottenburg: XXX276633
         </p>
+        <p style="text-align: right;">Vertretungsberechtigt: Marianne Salzhuber<br />
+          Vereinsregister Charlottenburg: XXX276633</p>
       </div>
     </div>
   </footer>
 
-  <button id="scrollTop" class="scroll-top hidden" type="button" aria-label="Nach oben scrollen">
+  <button id="scrollTop" class="scroll-top" type="button" aria-label="Nach oben scrollen">
     <img src="assets/icons/arrow-up.svg" alt="" />
   </button>
 
