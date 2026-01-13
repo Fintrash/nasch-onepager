@@ -19,11 +19,11 @@
 
         <ul class="nav__menu">
           <li><a href="#start">Start</a></li>
+          <li class="member-only hidden"><a href="#mitgliederversammlungTitle">Mitgliederversammlung</a></li>
           <li><a href="#tagung">Tagung</a></li>
           <li><a href="#anmeldung">Anmeldung</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-          <li class="member-only hidden"><a href="#mitglieder">Mitgliederversammlung</a></li>
           <li class="member-only hidden"><a href="#downloads">Download</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
         </ul>
 
         <button class="nav__login" id="loginToggleBtn" type="button" aria-controls="loginModal" aria-expanded="false">
@@ -81,7 +81,11 @@
               <a href="#anmeldung" class="btn btn--secondary">Zur Anmeldung</a>
             </p>
 
-            <p class="member-welcome member-only hidden">Willkommen zurück!</p>
+            <p class="member-welcome member-only hidden">Willkommen im Bereich für Mitglieder von NASCH e.V.</p>
+            <p class="member-welcome member-only hidden">
+              Liebe Mitglieder, dieser Bereich ist exklusiv für Sie und bietet alle wichtigen Informationen rund um
+              unsere Veranstaltungen, News und Downloads.
+            </p>
           </div>
         </div>
 
@@ -134,6 +138,7 @@
               </div>
               <div>
                 <h4>Datum</h4>
+                <p class="member-only hidden">Dienstag, 10. März 2026</p>
                 <p>Mittwoch, 11. März 2026</p>
               </div>
             </article>
@@ -145,7 +150,7 @@
               </div>
               <div>
                 <h4>Ort</h4>
-                <p>Braunschweig</p>
+                <p>Jugendherberge Braunschweig<br>Wendenstraße 30</p>
               </div>
             </article>
 
@@ -156,76 +161,106 @@
               </div>
               <div>
                 <h4>Zeiten</h4>
-                <p>10:00 - 17:00 Uhr</p>
+                <p class="member-only hidden">DI: 16:30 - 21:00 Uhr</p>
+                <p>MI: 10:00 - 17:00 Uhr</p>
               </div>
             </article>
           </div>
         </div>
+        <div class="mitgliederversammlung member-only hidden">
+          <section class="programm" aria-labelledby="programmTitle">
+            <h3 id="mitgliederversammlungTitle">Mitgliederversammlung<br>Programm: Dienstag, 10. März 2026</h3>
 
-        <section class="programm" aria-labelledby="programmTitle">
-          <h3 id="programmTitle">Programm</h3>
+            <div class="programm__list">
+              <article class="programm__item">
+                <span class="time" aria-label="Uhrzeit">16:30<br>-<br>18:00</span>
+                <p>Anreise der Netzwerk-Mitglieder</p>
+              </article>
+              <article class="programm__item">
+                <span class="time" aria-label="Uhrzeit">18:00</span>
+                <p>Beginn der internen Jahrestagung<br>
+                  <small>Großer Saal Jugendherberge Braunschweig<br>Begrüßung und Einführung Marianne Salzhuber
+                    (NASCH-Koordinatorin)</small>
+                </p>
+              </article>
+              <article class="programm__item">
+                <span class="time" aria-label="Uhrzeit">19:00</span>
+                <p>Abendessen</p>
+              </article>
+              <article class="programm__item">
+                <span class="time" aria-label="Uhrzeit">20:00</span>
+                <p>Fortsetzung interner Abstimmungen</p>
+              </article>
+              <article class="programm__item">
+                <span class="time" aria-label="Uhrzeit">21:00</span>
+                <p>Get-Together</p>
+              </article>
+            </section>
+            </div>
+            <section class="programm" aria-labelledby="programmTitle">
+              <h3 id="programmTitle">Programm: Mittwoch, 11. März 2026</h3>
 
-          <div class="programm__list">
-            <article class="programm__item">
-              <span class="time" aria-label="Uhrzeit">10:00</span>
-              <p>Pressekonferenz der NASCH-Koordination</p>
-            </article>
+              <div class="programm__list">
+                <article class="programm__item">
+                  <span class="time" aria-label="Uhrzeit">10:00</span>
+                  <p>Pressekonferenz der NASCH-Koordination</p>
+                </article>
 
-            <article class="programm__item">
-              <span class="time" aria-label="Uhrzeit">10:00</span>
-              <p>
-                Probekochen mit Schüler/-innen der 4. Klasse<br />
-                <small>Parallel zur Pressekonferenz: Grundschule an der Wendenstraße</small>
-              </p>
-            </article>
+                <article class="programm__item">
+                  <span class="time" aria-label="Uhrzeit">10:00</span>
+                  <p>
+                    Probekochen mit Schüler/-innen der 4. Klasse<br />
+                    <small>Parallel zur Pressekonferenz<br />Grundschule an der Wendenstraße</small>
+                  </p>
+                </article>
 
-            <article class="programm__item">
-              <span class="time" aria-label="Uhrzeit">10:30</span>
-              <p>
-                Was kommt auf den Tisch? Wer beim Schulessen mitredet<br />
-                <small>
-                  Öffentlicher Vortrag mit Diskussion. Bemerkenswerte Beispiele aus den Bundesländern. Referentin:
-                  Cornelia Zschick, Hamburg
-                </small>
-              </p>
-            </article>
+                <article class="programm__item">
+                  <span class="time" aria-label="Uhrzeit">10:30</span>
+                  <p>
+                    Was kommt auf den Tisch? Wer beim Schulessen mitredet<br />
+                    <small>
+                      Öffentlicher Vortrag mit Diskussion. Bemerkenswerte Beispiele aus den Bundesländern.<br>Referentin:
+                      Cornelia Zschick, Hamburg
+                    </small>
+                  </p>
+                </article>
 
-            <article class="programm__item">
-              <span class="time" aria-label="Uhrzeit">12:30</span>
-              <p>Mittagessen</p>
-            </article>
+                <article class="programm__item">
+                  <span class="time" aria-label="Uhrzeit">12:30</span>
+                  <p>Mittagessen</p>
+                </article>
 
-            <article class="programm__item">
-              <span class="time" aria-label="Uhrzeit">14:00</span>
-              <p>
-                Kocherfahrungen von Schulkindern<br />
-                <small>Wie es uns erging, wie es uns schmeckte. Viertklässler/-innen berichten über ihre
-                  Kocherfahrungen</small>
-              </p>
-            </article>
+                <article class="programm__item">
+                  <span class="time" aria-label="Uhrzeit">14:00</span>
+                  <p>
+                    Kocherfahrungen von Schulkindern<br />
+                    <small>Wie es uns erging, wie es uns schmeckte. <br>Viertklässler/-innen berichten über ihre
+                      Kocherfahrungen</small>
+                  </p>
+                </article>
 
-            <article class="programm__item">
-              <span class="time" aria-label="Uhrzeit">14:30</span>
-              <p>
-                Arbeit in Kleingruppen<br />
-                <small>
-                  I. Braunschweiger Elternbeiräte und Schulleitungen im Gespräch mit NASCH-Caterern<br />
-                  II. Lebensmittelabfälle reduzieren und Entsorgung<br />
-                  III. DGE-Qualitätsstandards und Zertifizierung
-                </small>
-              </p>
-            </article>
+                <article class="programm__item">
+                  <span class="time" aria-label="Uhrzeit">14:30</span>
+                  <p>
+                    Arbeit in Kleingruppen<br />
+                    <small>
+                      <b>I. Braunschweiger Elternbeiräte und Schulleitungen</b> im moderierten Gespräch mit NASCH-Caterern über Herkunft, Geschmack und Kosten des Schulessens. NASCH-Caterer Amar Mahato stellt sein Konzept für Braunschweig vor. Die große Bedeutung des Kochens mit den Schüler/-innen.<br />
+                      <b>II. NASCH-Caterer tauschen sich aus (1):</b> Wie lassen sich Lebensmittelabfälle reduzieren? <br>Welche cleveren Ideen für die Entsorgung gibt es?<br>Wer sind unsere Kooperationspartner?<br />
+                      <b>III. NASCH-Caterer tauschen sich aus (2):</b> (Wie) helfen uns die DGE-Qualitätsstandards für die Verpflegung in Schulen?<br>Ist ein Zertifizierungsverfahren erstrebenswert? <br />
+                    </small>
+                  </p>
+                </article>
 
-            <article class="programm__item">
-              <span class="time" aria-label="Uhrzeit">16:30</span>
-              <p>
-                Rückblick und Ausblick<br />
-                <small>Gemeinsamer Abschluss der Tagung</small>
-              </p>
-            </article>
-          </div>
-        </section>
-      </div>
+                <article class="programm__item">
+                  <span class="time" aria-label="Uhrzeit">16:30</span>
+                  <p>
+                    Rückblick und Ausblick<br />
+                    <small>Gemeinsamer Abschluss der Tagung</small>
+                  </p>
+                </article>
+              </div>
+            </section>
+        </div>
     </section>
 
     <section id="anmeldung" class="anmeldung" aria-labelledby="anmeldungTitle">
@@ -279,6 +314,10 @@
             <label class="radio">
               <input type="radio" name="teil" checked />
               Mittwoch, 11. März
+            </label>
+            <label class="radio member-only hidden">
+              <input type="radio" name="teil" checked />
+              Dienstag, 10. März
             </label>
           </fieldset>
 
@@ -340,7 +379,7 @@
           <p><strong>Koordinationsbüro</strong></p>
           <p>Gneisenaustraße 17<br />10961 Berlin</p>
         </section>
-<section></section>
+        <section></section>
 
 
         <nav aria-label="Footer Navigation">
@@ -352,7 +391,7 @@
             <li><a href="#kontakt">Kontakt</a></li>
           </ul>
         </nav>
-                <section aria-label="Kontakt">
+        <section aria-label="Kontakt">
           <h4>Kontakt</h4>
           <p>
             buero@nasch-berlin.de<br />

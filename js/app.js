@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const memberOnlyEls = document.querySelectorAll(".member-only");
   const loggedOutBlocks = document.querySelectorAll(".downloads__locked");
 
+  const heroButtons = document.querySelector(".hero__buttons");
+
   const SESSION_KEY = "naschMemberLoggedIn";
   let isMember = sessionStorage.getItem(SESSION_KEY) === "1";
 
@@ -24,20 +26,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function applyMemberState() {
     if (isMember) {
-      memberOnlyEls.forEach(el => el.classList.remove("hidden"));
-      loggedOutBlocks.forEach(el => el.classList.add("hidden"));
+      memberOnlyEls.forEach((el) => el.classList.remove("hidden"));
+      loggedOutBlocks.forEach((el) => el.classList.add("hidden"));
+
+      if (heroButtons) heroButtons.classList.add("hidden");
 
       if (loginText) loginText.textContent = "Logout";
       if (loginIcon) loginIcon.src = "assets/icons/Icon_Logout.svg";
     } else {
-      memberOnlyEls.forEach(el => el.classList.add("hidden"));
-      loggedOutBlocks.forEach(el => el.classList.remove("hidden"));
+      memberOnlyEls.forEach((el) => el.classList.add("hidden"));
+      loggedOutBlocks.forEach((el) => el.classList.remove("hidden"));
+
+      if (heroButtons) heroButtons.classList.remove("hidden");
 
       if (loginText) loginText.textContent = "Mitglieder Login";
       if (loginIcon) loginIcon.src = "assets/icons/Icon_Login.svg";
     }
-
-    if (loginBtn) loginBtn.setAttribute("aria-expanded", "false");
   }
 
   function openModal() {
@@ -112,17 +116,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const updateScrollTopVisibility = () => {
+  function updateScrollTopVisibility() {
     if (!scrollTopBtn) return;
 
     if (window.scrollY > 400) {
-      scrollTopBtn.classList.remove("hidden");
       scrollTopBtn.classList.add("visible");
     } else {
-      scrollTopBtn.classList.add("hidden");
       scrollTopBtn.classList.remove("visible");
     }
-  };
+  }
 
   if (scrollTopBtn) {
     scrollTopBtn.addEventListener("click", () => {
